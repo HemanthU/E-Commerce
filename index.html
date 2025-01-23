@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Online Resume</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Online Resume</h1>
+    <p>Fill in your details below</p>
+  </header>
+  
+    <form id="resume-form" action="https://formspree.io/f/xnnjqzbv" method="POST">
+    <section id="personal-info">
+      <h2>Personal Information</h2>
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+      
+      <label for="profession">Your Profession:</label>
+      <input type="text" id="profession" name="profession" placeholder="Enter your profession" required><br><br>
+    </section>
+
+    
+    <section id="about">
+      <h2>About Me</h2>
+      <label for="about">Write a brief introduction about yourself:</label><br>
+      <textarea id="about" name="about" placeholder="Write about yourself" required></textarea><br><br>
+    </section>
+
+    
+    <section id="skills">
+      <h2>Skills</h2>
+      <label for="skills">List your skills (separate with commas):</label><br>
+      <input type="text" id="skills" name="skills" placeholder="e.g., HTML, CSS, JavaScript" required><br><br>
+    </section>
+
+    
+    <section id="education">
+      <h2>Education</h2>
+      <label for="school">School:</label>
+      <input type="text" id="school" name="school" placeholder="e.g., School name" required><br><br>
+    
+      <label for="degree">Degree:</label>
+      <input type="text" id="degree" name="degree" placeholder="e.g., BSc Computer Science" required><br><br>
+      
+      <label for="institution">Institution Name:</label>
+      <input type="text" id="institution" name="institution" placeholder="e.g., XYZ University" required><br><br>
+      
+      <label for="graduation-year">Year of Graduation:</label>
+      <input type="number" id="graduation-year" name="graduation-year" placeholder="e.g., 2025" required><br><br>
+    </section>
+
+    
+    <section id="experience">
+      <h2>Work Experience</h2>
+      <label for="job-title">Job Title:</label>
+      <input type="text" id="job-title" name="job-title" placeholder="e.g., Web Developer" required><br><br>
+      
+      <label for="company-name">Company Name:</label>
+      <input type="text" id="company-name" name="company-name" placeholder="e.g., ABC Corp" required><br><br>
+      
+      <label for="job-duration">Duration (in years):</label>
+      <input type="number" id="job-duration" name="job-duration" placeholder="e.g., 2" required><br><br>
+    </section>
+
+  
+    <section id="contact">
+      <h2>Contact</h2>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+      
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
+      
+      <label for="linkedin">LinkedIn Profile:</label>
+      <input type="url" id="linkedin" name="linkedin" placeholder="Enter your LinkedIn URL"><br><br>
+    </section>
+
+    <div class="form-buttons">
+    <button type="submit" class="submit-button">Submit Resume</button>
+    <button type="reset" class="clear-button">Clear Form</button>
+  </div>
+</form>
+
+  <footer>
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+ <h1>Enable live serve</h1>
+</body>
+</html>
+
+
