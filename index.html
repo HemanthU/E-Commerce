@@ -5,6 +5,108 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Online Resume</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .resume-container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+
+  .content .personal-info,
+  .content .skills {
+    width: 45%;
+  }
+
+  .content ul {
+    padding-left: 20px;
+  }
+
+  .footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 40px;
+  }
+
+  .footer a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .textarea-container {
+    position: relative;
+    margin: 20px 0;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 15px;
+    padding-top: 30px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  textarea:focus {
+    border-color: #4CAF50;
+  }
+
+  .label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 16px;
+    color: #aaa;
+    pointer-events: none;
+    transition: 0.3s ease all;
+  }
+
+  textarea:focus + .label,
+  textarea:not(:placeholder-shown) + .label {
+    top: -10px;
+    font-size: 12px;
+    color: #4CAF50;
+  }
+
+  </style>
 </head>
 <body>
   
