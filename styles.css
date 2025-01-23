@@ -65,6 +65,38 @@ button:hover {
 }
 
 footer {
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text */
   text-align: center;
+  padding: 20px 0;
   margin-top: 30px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between links */
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: #4CAF50; /* Green color for links */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #80e27e; /* Lighter green on hover */
+}
+
+footer p {
+  font-size: 14px;
+  margin: 0;
 }
