@@ -37,6 +37,13 @@ label {
   margin-bottom: 5px;
   font-weight: bold;
 }
+input:focus+label {
+  transform: translateY(-25px);
+  color: #0051ff;
+}
+input:focus{
+  border-color: #0051ff;
+}
 
 input, textarea {
   width: 100%;
