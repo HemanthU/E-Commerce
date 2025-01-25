@@ -37,6 +37,15 @@ label {
   margin-bottom: 5px;
   font-weight: bold;
 }
+label {
+  position: absolute;
+  left: 50px;
+  top: 65px;
+  background: #fff;
+  padding: 0px 5px;
+  transition : transform 0.3s ease,
+  color 0.3s ease;
+}
 input:focus+label {
   transform: translateY(-25px);
   color: #0051ff;
