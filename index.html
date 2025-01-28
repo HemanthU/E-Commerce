@@ -13,13 +13,26 @@
     padding: 0;
   }
 
+  /* Header styling */
   header {
-    background-color: #4CAF50;
+    background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 40px 0;
+    margin-bottom: 30px;
   }
 
+  header h1 {
+    font-size: 3em;
+    margin: 0;
+  }
+
+  header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+
+  /* Resume Container Styling */
   .resume-container {
     width: 80%;
     margin: 50px auto;
@@ -29,10 +42,10 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
-  h1 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 10px;
+  h2 {
+    font-size: 2em;
+    color: #4CAF50;
+    margin-bottom: 15px;
   }
 
   .content {
@@ -50,34 +63,32 @@
     padding-left: 20px;
   }
 
-  /* Center-aligned footer */
+  /* Footer Styling */
   .footer {
     background-color: #4CAF50;
     color: white;
     text-align: center;
-    padding: 10px 0;
-    margin-top: 40px;
+    padding: 20px 0;
+    margin-top: 50px;
   }
 
   .footer a {
     color: white;
     margin: 0 15px;
-    text-align: left;
-    text-decoration: none;
     font-weight: bold;
+    text-decoration: none;
   }
 
   .footer a:hover {
     text-decoration: underline;
   }
 
-  /* Left-aligned footer */
   .left-footer {
     background-color: #e0e0e0;
     color: black;
-    padding: 10px;
+    padding: 15px;
     text-align: left;
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
   .left-footer a {
@@ -91,118 +102,132 @@
     text-decoration: underline;
   }
 
-  .textarea-container {
-    position: relative;
-    margin: 20px 0;
-  }
-
-  textarea {
+  /* Input Field Styling */
+  .form-section input[type="text"],
+  .form-section input[type="email"],
+  .form-section input[type="tel"],
+  .form-section input[type="number"],
+  .form-section input[type="url"],
+  .form-section input[type="date"],
+  .form-section textarea {
     width: 100%;
-    padding: 15px;
-    padding-top: 30px;
-    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1em;
     border: 2px solid #ccc;
     border-radius: 5px;
     outline: none;
-    transition: border-color 0.3s ease;
   }
 
-  textarea:focus {
-    border-color: #4CAF50;
+  .form-section textarea {
+    height: 150px;
+    resize: vertical;
   }
 
-  .label {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    font-size: 16px;
-    color: #aaa;
-    pointer-events: none;
-    transition: 0.3s ease all;
+  .form-buttons button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
   }
 
-  textarea:focus + .label,
-  textarea:not(:placeholder-shown) + .label {
-    top: -10px;
-    font-size: 12px;
-    color: #4CAF50;
+  .form-buttons button:hover {
+    background-color: #45a049;
   }
 
+  .form-buttons .clear-button {
+    background-color: #e0e0e0;
+    color: black;
+  }
+
+  .form-buttons .clear-button:hover {
+    background-color: #ccc;
+  }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Online Resume</h1>
-    <p>Fill in your details below</p>
+    <h1>My Online Resume</h1>
+    <p>Fill in your details below to create your online resume</p>
   </header>
-  
-  <form id="resume-form" action="https://formspree.io/f/xnnjqzbv" method="POST">
-    <section id="personal-info">
-      <h2>Personal Information</h2>
-      <label for="name">Your Name:</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
-      
-      <label for="profession">Your Profession:</label>
-      <input type="text" id="profession" name="profession" placeholder="Enter your profession" required><br><br>
-    </section>
 
-    <section id="about"> 
-      <h2>About Me</h2>
-      <label for="about">Write a brief introduction about yourself:</label><br>
-      <textarea id="about" name="about" placeholder="Write about yourself" required></textarea><br><br>
-    </section>
+  <div class="resume-container">
+    <form id="resume-form" action="https://formspree.io/f/xnnjqzbv" method="POST">
+      <section class="form-section" id="personal-info">
+        <h2>Personal Information</h2>
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required><br>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <label for="skills">List your skills (separate with commas):</label><br>
-      <input type="text" id="skills" name="skills" placeholder="e.g., HTML, CSS, JavaScript" required><br><br>
-    </section>
+        <!-- Added Date of Birth field -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br>
 
-    <section id="education">
-      <h2>Education</h2>
-      <label for="school">School:</label>
-      <input type="text" id="school" name="school" placeholder="e.g., School name" required><br><br>
-    
-      <label for="degree">Degree:</label>
-      <input type="text" id="degree" name="degree" placeholder="e.g., BSc Computer Science" required><br><br>
-      
-      <label for="institution">Institution Name:</label>
-      <input type="text" id="institution" name="institution" placeholder="e.g., XYZ University" required><br><br>
-      
-      <label for="graduation-year">Year of Graduation:</label>
-      <input type="number" id="graduation-year" name="graduation-year" placeholder="e.g., 2025" required><br><br>
-    </section>
+        <label for="profession">Your Profession:</label>
+        <input type="text" id="profession" name="profession" placeholder="Enter your profession" required><br>
+      </section>
 
-    <section id="experience">
-      <h2>Work Experience</h2>
-      <label for="job-title">Job Title:</label>
-      <input type="text" id="job-title" name="job-title" placeholder="e.g., Web Developer" required><br><br>
-      
-      <label for="company-name">Company Name:</label>
-      <input type="text" id="company-name" name="company-name" placeholder="e.g., ABC Corp" required><br><br>
-      
-      <label for="job-duration">Duration (in years):</label>
-      <input type="number" id="job-duration" name="job-duration" placeholder="e.g., 2" required><br><br>
-    </section>
+      <section class="form-section" id="about">
+        <h2>About Me</h2>
+        <label for="about">Write a brief introduction about yourself:</label><br>
+        <textarea id="about" name="about" placeholder="Write about yourself" required></textarea><br>
+      </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
-      
-      <label for="phone">Phone:</label>
-      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
-      
-      <label for="linkedin">LinkedIn Profile:</label>
-      <input type="url" id="linkedin" name="linkedin" placeholder="Enter your LinkedIn URL"><br><br>
-    </section>
+      <section class="form-section" id="skills">
+        <h2>Skills</h2>
+        <label for="skills">List your skills (separate with commas):</label><br>
+        <input type="text" id="skills" name="skills" placeholder="e.g., HTML, CSS, JavaScript" required><br>
+      </section>
 
-    <div class="form-buttons">
-      <button type="submit" class="submit-button">Submit Resume</button>
-      <button type="reset" class="clear-button">Clear Form</button>
-    </div>
-  </form>
+      <section class="form-section" id="education">
+        <h2>Education</h2>
+        <label for="school">School:</label>
+        <input type="text" id="school" name="school" placeholder="e.g., School name" required><br>
+
+        <label for="degree">Degree:</label>
+        <input type="text" id="degree" name="degree" placeholder="e.g., BSc Computer Science" required><br>
+
+        <label for="institution">Institution Name:</label>
+        <input type="text" id="institution" name="institution" placeholder="e.g., XYZ University" required><br>
+
+        <label for="graduation-year">Year of Graduation:</label>
+        <input type="number" id="graduation-year" name="graduation-year" placeholder="e.g., 2025" required><br>
+      </section>
+
+      <section class="form-section" id="experience">
+        <h2>Work Experience</h2>
+        <label for="job-title">Job Title:</label>
+        <input type="text" id="job-title" name="job-title" placeholder="e.g., Web Developer" required><br>
+
+        <label for="company-name">Company Name:</label>
+        <input type="text" id="company-name" name="company-name" placeholder="e.g., ABC Corp" required><br>
+
+        <label for="job-duration">Duration (in years):</label>
+        <input type="number" id="job-duration" name="job-duration" placeholder="e.g., 2" required><br>
+      </section>
+
+      <section class="form-section" id="contact">
+        <h2>Contact</h2>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br>
+
+        <label for="linkedin">LinkedIn Profile:</label>
+        <input type="url" id="linkedin" name="linkedin" placeholder="Enter your LinkedIn URL"><br>
+      </section>
+
+      <div class="form-buttons">
+        <button type="submit" class="submit-button">Submit Resume</button>
+        <button type="reset" class="clear-button">Clear Form</button>
+      </div>
+    </form>
+  </div>
 
   <!-- Footer 1 (center-aligned) -->
   <footer class="footer">
@@ -212,7 +237,7 @@
         <a href="#contact">Contact Us</a>
         <a href="#privacy">Privacy Policy</a>
       </div>
-      <p>&copy; 2025 Online Resume. All rights reserved.</p>
+      <p>&copy; 2025 My Online Resume. All rights reserved.</p>
     </div>
   </footer>
 
