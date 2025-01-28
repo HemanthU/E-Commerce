@@ -6,9 +6,18 @@
   <title>My Online Resume</title>
   <link rel="stylesheet" href="styles.css">
   <style>
+  /* General Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
   body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
   }
@@ -17,115 +26,140 @@
     background-color: #4CAF50;
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
-  .resume-container {
+  header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 1.1em;
+  }
+
+  .container {
     width: 80%;
+    max-width: 900px;
     margin: 50px auto;
     padding: 20px;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
 
-  h1 {
+  .form-header {
     text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
   }
 
-  .content {
+  .form-header h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #4CAF50;
+  }
+
+  .form-section {
+    margin-bottom: 30px;
+  }
+
+  .form-section label {
+    font-size: 1.1em;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+  }
+
+  .form-section input[type="text"],
+  .form-section input[type="email"],
+  .form-section input[type="tel"],
+  .form-section input[type="date"],
+  .form-section input[type="url"],
+  .form-section textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+  }
+
+  .form-section input[type="text"]:focus,
+  .form-section input[type="email"]:focus,
+  .form-section input[type="tel"]:focus,
+  .form-section input[type="date"]:focus,
+  .form-section input[type="url"]:focus,
+  .form-section textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
+
+  .form-section textarea {
+    min-height: 150px;
+  }
+
+  .form-buttons {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
-  .content .personal-info,
-  .content .skills {
-    width: 45%;
+  .form-buttons button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
 
-  .content ul {
-    padding-left: 20px;
+  .form-buttons button:hover {
+    background-color: #45a049;
   }
 
-  /* Center-aligned footer */
   .footer {
     background-color: #4CAF50;
     color: white;
+    padding: 20px;
     text-align: center;
-    padding: 10px 0;
     margin-top: 40px;
+    font-size: 1.2em;
   }
 
   .footer a {
     color: white;
-    margin: 0 15px;
-    text-align: left;
     text-decoration: none;
     font-weight: bold;
+    margin: 0 15px;
+    transition: color 0.3s ease;
   }
 
   .footer a:hover {
-    text-decoration: underline;
+    color: #f1f1f1;
   }
 
-  /* Left-aligned footer */
   .left-footer {
-    background-color: #e0e0e0;
-    color: black;
-    padding: 10px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin-top: 30px;
     text-align: left;
-    margin-top: 20px;
   }
 
   .left-footer a {
     color: #4CAF50;
     text-decoration: none;
-    font-weight: bold;
     margin-right: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
   }
 
   .left-footer a:hover {
     text-decoration: underline;
-  }
-
-  .textarea-container {
-    position: relative;
-    margin: 20px 0;
-  }
-
-  textarea {
-    width: 100%;
-    padding: 15px;
-    padding-top: 30px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease;
-  }
-
-  textarea:focus {
-    border-color: #4CAF50;
-  }
-
-  .label {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    font-size: 16px;
-    color: #aaa;
-    pointer-events: none;
-    transition: 0.3s ease all;
-  }
-
-  textarea:focus + .label,
-  textarea:not(:placeholder-shown) + .label {
-    top: -10px;
-    font-size: 12px;
-    color: #4CAF50;
   }
 
   </style>
@@ -136,87 +170,63 @@
     <h1>Online Resume</h1>
     <p>Fill in your details below</p>
   </header>
-  
-  <form id="resume-form" action="https://formspree.io/f/xnnjqzbv" method="POST">
-    <section id="personal-info">
+
+  <div class="container">
+    <div class="form-header">
       <h2>Personal Information</h2>
-      <label for="name">Your Name:</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
-      
-      <label for="profession">Your Profession:</label>
-      <input type="text" id="profession" name="profession" placeholder="Enter your profession" required><br><br>
-    </section>
-
-    <section id="about"> 
-      <h2>About Me</h2>
-      <label for="about">Write a brief introduction about yourself:</label><br>
-      <textarea id="about" name="about" placeholder="Write about yourself" required></textarea><br><br>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <label for="skills">List your skills (separate with commas):</label><br>
-      <input type="text" id="skills" name="skills" placeholder="e.g., HTML, CSS, JavaScript" required><br><br>
-    </section>
-
-    <section id="education">
-      <h2>Education</h2>
-      <label for="school">School:</label>
-      <input type="text" id="school" name="school" placeholder="e.g., School name" required><br><br>
-    
-      <label for="degree">Degree:</label>
-      <input type="text" id="degree" name="degree" placeholder="e.g., BSc Computer Science" required><br><br>
-      
-      <label for="institution">Institution Name:</label>
-      <input type="text" id="institution" name="institution" placeholder="e.g., XYZ University" required><br><br>
-      
-      <label for="graduation-year">Year of Graduation:</label>
-      <input type="number" id="graduation-year" name="graduation-year" placeholder="e.g., 2025" required><br><br>
-    </section>
-
-    <section id="experience">
-      <h2>Work Experience</h2>
-      <label for="job-title">Job Title:</label>
-      <input type="text" id="job-title" name="job-title" placeholder="e.g., Web Developer" required><br><br>
-      
-      <label for="company-name">Company Name:</label>
-      <input type="text" id="company-name" name="company-name" placeholder="e.g., ABC Corp" required><br><br>
-      
-      <label for="job-duration">Duration (in years):</label>
-      <input type="number" id="job-duration" name="job-duration" placeholder="e.g., 2" required><br><br>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
-      
-      <label for="phone">Phone:</label>
-      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
-      
-      <label for="linkedin">LinkedIn Profile:</label>
-      <input type="url" id="linkedin" name="linkedin" placeholder="Enter your LinkedIn URL"><br><br>
-    </section>
-
-    <div class="form-buttons">
-      <button type="submit" class="submit-button">Submit Resume</button>
-      <button type="reset" class="clear-button">Clear Form</button>
     </div>
-  </form>
 
- 
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-links">
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact Us</a>
-        <a href="#privacy">Privacy Policy</a>
+    <form id="resume-form" action="https://formspree.io/f/xnnjqzbv" method="POST">
+      
+      <div class="form-section">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
       </div>
-      <p>&copy; 2025 Online Resume. All rights reserved.</p>
+
+      <!-- Adding DOB field below Name -->
+      <div class="form-section">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+      
+      <div class="form-section">
+        <label for="profession">Your Profession:</label>
+        <input type="text" id="profession" name="profession" placeholder="Enter your profession" required>
+      </div>
+
+      <div class="form-section">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-section">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+      </div>
+
+      <div class="form-section">
+        <label for="linkedin">LinkedIn Profile:</label>
+        <input type="url" id="linkedin" name="linkedin" placeholder="Enter your LinkedIn URL">
+      </div>
+
+      <div class="form-buttons">
+        <button type="submit">Submit Resume</button>
+        <button type="reset">Clear Form</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Footer 1 (center-aligned) -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#privacy">Privacy Policy</a>
     </div>
+    <p>&copy; 2025 Online Resume. All rights reserved.</p>
   </footer>
 
- 
+  <!-- Footer 2 (left-aligned with links) -->
   <footer class="left-footer">
     <p><a href="mailto:example@resume.com">Mail Us</a></p>
     <p><a href="tel:+917892586349">Call Us</a></p>
