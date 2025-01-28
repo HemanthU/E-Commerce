@@ -6,243 +6,162 @@
   <title>My Online Resume</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      margin: 0;
-      padding: 0;
-    }
+  /* General Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    header {
-      background-color: #4CAF50;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-    }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
 
-    header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
+  header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
 
-    header p {
-      font-size: 1.1em;
-    }
+  header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
 
-    .container {
-      width: 90%;
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 20px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    }
+  header p {
+    font-size: 1.1em;
+  }
 
-    .form-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+  .container {
+    width: 80%;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
 
-    .form-header h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #4CAF50;
-    }
+  .form-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
 
-    .form-section {
-      margin-bottom: 30px;
-    }
+  .form-header h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #4CAF50;
+  }
 
-    .form-section label {
-      font-size: 1.1em;
-      font-weight: bold;
-      display: block;
-      margin-bottom: 8px;
-      color: #555;
-    }
+  .form-section {
+    margin-bottom: 30px;
+  }
 
-    .form-section input[type="text"],
-    .form-section input[type="email"],
-    .form-section input[type="tel"],
-    .form-section input[type="date"],
-    .form-section input[type="url"],
-    .form-section textarea {
-      width: 100%;
-      padding: 12px;
-      font-size: 1.1em;
-      border: 2px solid #ccc;
-      border-radius: 5px;
-      margin-bottom: 15px;
-      transition: all 0.3s ease;
-    }
+  .form-section label {
+    font-size: 1.1em;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+  }
 
-    .form-section input[type="text"]:focus,
-    .form-section input[type="email"]:focus,
-    .form-section input[type="tel"]:focus,
-    .form-section input[type="date"]:focus,
-    .form-section input[type="url"]:focus,
-    .form-section textarea:focus {
-      border-color: #4CAF50;
-      outline: none;
-    }
+  .form-section input[type="text"],
+  .form-section input[type="email"],
+  .form-section input[type="tel"],
+  .form-section input[type="date"],
+  .form-section input[type="url"],
+  .form-section textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+  }
 
-    .form-section textarea {
-      min-height: 150px;
-    }
+  .form-section input[type="text"]:focus,
+  .form-section input[type="email"]:focus,
+  .form-section input[type="tel"]:focus,
+  .form-section input[type="date"]:focus,
+  .form-section input[type="url"]:focus,
+  .form-section textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
 
-    .form-buttons {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-    }
+  .form-section textarea {
+    min-height: 150px;
+  }
 
-    .form-buttons button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      font-size: 1.1em;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
 
-    .form-buttons button:hover {
-      background-color: #45a049;
-    }
+  .form-buttons button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
 
-    .footer {
-      background-color: #4CAF50;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      margin-top: 40px;
-      font-size: 1.2em;
-    }
+  .form-buttons button:hover {
+    background-color: #45a049;
+  }
 
-    .footer a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 15px;
-      transition: color 0.3s ease;
-    }
+  .footer {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.2em;
+  }
 
-    .footer a:hover {
-      color: #f1f1f1;
-    }
+  .footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+  }
 
-    .left-footer {
-      background-color: #f1f1f1;
-      padding: 20px;
-      margin-top: 30px;
-      text-align: left;
-    }
+  .footer a:hover {
+    color: #f1f1f1;
+  }
 
-    .left-footer a {
-      color: #4CAF50;
-      text-decoration: none;
-      margin-right: 20px;
-      font-size: 1.2em;
-      font-weight: bold;
-    }
+  .left-footer {
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin-top: 30px;
+    text-align: left;
+  }
 
-    .left-footer a:hover {
-      text-decoration: underline;
-    }
+  .left-footer a {
+    color: #4CAF50;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
 
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.5em;
-      }
+  .left-footer a:hover {
+    text-decoration: underline;
+  }
 
-      header p {
-        font-size: 1em;
-      }
-
-      .container {
-        width: 95%;
-        padding: 15px;
-      }
-
-      .form-header h2 {
-        font-size: 1.5em;
-      }
-
-      .form-section input,
-      .form-section textarea {
-        font-size: 1em;
-        padding: 10px;
-      }
-
-      .form-buttons {
-        flex-direction: column;
-      }
-
-      .form-buttons button {
-        width: 100%;
-        margin-bottom: 10px;
-      }
-
-      .footer {
-        font-size: 1em;
-      }
-
-      .footer a {
-        font-size: 1em;
-      }
-
-      .left-footer {
-        padding: 15px;
-        font-size: 1em;
-      }
-
-      .left-footer a {
-        font-size: 1em;
-      }
-    }
-
-    /* Mobile Styles */
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 2em;
-      }
-
-      .container {
-        width: 100%;
-        padding: 10px;
-      }
-
-      .form-header h2 {
-        font-size: 1.3em;
-      }
-
-      .form-buttons button {
-        font-size: 1em;
-        padding: 10px;
-      }
-
-      .footer {
-        font-size: 0.9em;
-      }
-
-      .footer a {
-        font-size: 1em;
-        margin-bottom: 5px;
-      }
-
-      .left-footer {
-        padding: 10px;
-        font-size: 0.9em;
-      }
-
-      .left-footer a {
-        font-size: 1em;
-        margin-right: 10px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -257,19 +176,19 @@
       <h2>Personal Information</h2>
     </div>
 
-    <!-- Form with Formspree integration and redirection on success -->
-    <form id="resume-form" action="https://formspree.io/f/xnnjqzbv" method="POST" data-success="thank-you.html">
+    <form id="resume-form" action="https://formspree.io/f/xnnjqzbv" method="POST">
       
       <div class="form-section">
         <label for="name">Your Name:</label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required>
       </div>
 
+      
       <div class="form-section">
         <label for="dob">Date of Birth:</label>
         <input type="date" id="dob" name="dob" required>
       </div>
-
+      
       <div class="form-section">
         <label for="profession">Your Profession:</label>
         <input type="text" id="profession" name="profession" placeholder="Enter your profession" required>
@@ -317,5 +236,4 @@
 
 </body>
 </html>
-
 
