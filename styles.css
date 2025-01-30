@@ -6,36 +6,41 @@ body {
     padding: 0;
 }
 
+/* Header Section */
 header {
     background-color: #333;
     color: white;
-    padding: 10px 0;
+    padding: 15px 0; /* Adjust padding for a better layout */
     text-align: center;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     transition: top 0.3s ease-in-out;
+    height: 80px;  /* Ensure header has sufficient height */
 }
 
 header .logo h1 {
     font-size: 2rem;
     text-transform: uppercase;
     font-weight: bold;
+    margin: 0;
     position: relative;
     left: 50%;
-    transform: translateX(50%);
+    transform: translateX(-50%);
     transition: left 0.3s ease-in-out;
 }
 
+/* Navigation Menu */
 header nav ul {
     list-style-type: none;
     padding: 0;
     margin: 10px 0;
+    text-align: center; /* Align nav items horizontally */
 }
 
 header nav ul li {
-    display: inline;
+    display: inline-block;
     margin-right: 20px;
 }
 
@@ -43,12 +48,13 @@ header nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
-    transition: text-decoration 0.3s ease; /* Smooth underline transition */
+    transition: text-decoration 0.3s ease;
+    padding: 5px 10px; /* Space around nav items */
 }
 
 header nav ul li a:hover {
-    text-decoration: underline; /* Underline on hover */
-    color: #f8f8f8; /* Slightly lighter color on hover (optional) */
+    text-decoration: underline;
+    color: #f8f8f8; /* Lighter color on hover */
 }
 
 /* Main Content Styling */
