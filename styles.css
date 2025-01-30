@@ -83,7 +83,7 @@ main {
     justify-items: center;
 }
 
-/* Product Cards - Square shape */
+/* Product Card - Image at the top and name/price below */
 .product-card {
     background-color: #fff;
     border-radius: 8px;
@@ -91,11 +91,9 @@ main {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
-    height: 0;
-    padding-top: 100%; /* This makes the height equal to width, creating a square */
-    position: relative;
+    height: 100%; /* Full height of the container */
     display: flex;
-    flex-direction: column; /* Stack children (image, name, price, button) vertically */
+    flex-direction: column;
 }
 
 .product-card:hover {
@@ -106,30 +104,25 @@ main {
 /* Product Image */
 .product-card img {
     width: 100%;
-    height: 100%;
+    height: 100%; /* Make image occupy full top space */
     object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
-/* Product Details (name, price, button) at the bottom */
-.product-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-top: auto; /* Pushes content to the bottom */
-    padding: 10px;
+/* Rectangle below the product image for name, price, and button */
+.product-info {
+    background-color: #f8f8f8;
+    padding: 15px;
     text-align: center;
+    border-top: 2px solid #ddd; /* Light border to separate image from text */
 }
 
-.product-card h3 {
-    font-size: 1.4rem; /* Larger font size for titles */
+.product-info h3 {
+    font-size: 1.5rem;
     margin: 10px 0;
 }
 
-.product-card p {
-    font-size: 1.2rem; /* Slightly larger font for price */
+.product-info p {
+    font-size: 1.2rem;
     color: #888;
     margin: 10px 0;
 }
