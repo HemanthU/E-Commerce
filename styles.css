@@ -36,6 +36,18 @@ header .logo h1 {
     transform: translateX(50%); /* Initially centered */
     transition: left 0.3s ease-in-out;
 }
+/* Logo - Website Name */
+header .logo h1 {
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold; /* Make the text bold */
+    position: relative;
+    left: 50%;
+    transform: translateX(50%); /* Initially centered */
+    transition: left 0.3s ease-in-out;
+}
+
 
 header nav ul {
     list-style: none;
