@@ -1,141 +1,151 @@
-/* Reset some default styles */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body and general page styling */
+/* Body */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
-/* Header Styling */
+/* Header Section */
 header {
     background-color: #333;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease-in-out; /* Smooth transition */
+    padding: 10px 0;
+    text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 header:hover {
-    background-color: #444; /* Change background color when hovered */
-    transform: translateY(-5px); /* Slight raise effect */
+    background-color: #444;
 }
 
 header .logo h1 {
+    color: white;
     font-size: 2rem;
+    text-transform: uppercase;
 }
 
 header nav ul {
-    list-style-type: none;
-    display: flex;
-    gap: 1rem;
+    list-style: none;
 }
 
 header nav ul li {
     display: inline;
+    margin: 0 15px;
 }
 
 header nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s ease-in-out; /* Smooth color transition */
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #f0a500; /* Change color when hovering over links */
+    color: #ff6347;
 }
 
-/* Main content area */
+/* Main Section: Product Categories */
 main {
-    padding: 2rem;
+    padding: 20px;
 }
 
-/* Section Styling */
+/* Product Section */
 .product-section {
-    margin-bottom: 3rem;
+    margin-bottom: 40px;
 }
 
 .product-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #333;
 }
 
-/* Product Grid Styling */
+/* Product Container */
 .product-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
 }
 
-/* Product Card Styling */
+/* Product Cards */
 .product-card {
-    background-color: white;
-    padding: 1.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    background-color: #fff;
     border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transform and shadow transition */
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Product Card Hover Effect */
 .product-card:hover {
-    transform: translateY(-10px); /* Lift the card slightly */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add stronger shadow */
-    cursor: pointer; /* Show pointer cursor on hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Product Image Styling */
 .product-card img {
-    max-width: 100%;
-    border-radius: 8px;
+    width: 100%;
+    height: auto;
 }
 
-/* Product Title Styling */
 .product-card h3 {
-    font-size: 1.5rem;
-    margin: 1rem 0;
-}
-
-/* Product Price Styling */
-.product-card p {
     font-size: 1.2rem;
-    margin: 0.5rem 0;
+    margin: 10px 0;
+    text-align: center;
 }
 
-/* Button Styling */
-.product-card button {
-    background-color: #333;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.product-card p {
     font-size: 1rem;
+    color: #888;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-.product-card button:hover {
-    background-color: #555;
+/* Add to Cart Button */
+button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Footer Styling */
+button:hover {
+    background-color: #e55347;
+    transform: scale(1.05);
+}
+
+/* Footer Section */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 10px 0;
     position: fixed;
     width: 100%;
     bottom: 0;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-container {
+        grid-template-columns: 1fr;
+    }
+}
