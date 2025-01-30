@@ -57,6 +57,18 @@ header nav ul li a:hover {
     color: #f8f8f8; /* Lighter color on hover */
 }
 
+/* Added smooth hover and underline effect for header navigation */
+header nav ul li a:focus {
+    outline: none; /* Remove the default outline on focus */
+    text-decoration: underline;
+}
+
+/* Sticky Header Adjustment for Scroll */
+header.sticky {
+    background-color: #222; /* Change color when scrolled */
+    transition: background-color 0.3s ease;
+}
+
 /* Main Content Styling */
 main {
     margin-top: 100px; /* To account for fixed header */
@@ -160,3 +172,4 @@ main {
         height: auto; /* Maintain aspect ratio */
     }
 }
+
