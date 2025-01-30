@@ -20,6 +20,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+header:hover {
+    background-color: #444; /* Change background color when hovered */
+    transform: translateY(-5px); /* Slight raise effect */
 }
 
 header .logo h1 {
@@ -40,6 +46,11 @@ header nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
+    transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+header nav ul li a:hover {
+    color: #f0a500; /* Change color when hovering over links */
 }
 
 /* Main content area */
@@ -47,36 +58,62 @@ main {
     padding: 2rem;
 }
 
+/* Section Styling */
+.product-section {
+    margin-bottom: 3rem;
+}
+
+.product-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
 /* Product Grid Styling */
 .product-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 2rem;
+    margin-top: 2rem;
 }
 
+/* Product Card Styling */
 .product-card {
     background-color: white;
     padding: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transform and shadow transition */
 }
 
+/* Product Card Hover Effect */
+.product-card:hover {
+    transform: translateY(-10px); /* Lift the card slightly */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add stronger shadow */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+
+/* Product Image Styling */
 .product-card img {
     max-width: 100%;
     border-radius: 8px;
 }
 
+/* Product Title Styling */
 .product-card h3 {
     font-size: 1.5rem;
     margin: 1rem 0;
 }
 
+/* Product Price Styling */
 .product-card p {
     font-size: 1.2rem;
     margin: 0.5rem 0;
 }
 
+/* Button Styling */
 .product-card button {
     background-color: #333;
     color: white;
@@ -101,3 +138,4 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
