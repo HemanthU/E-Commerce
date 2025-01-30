@@ -116,7 +116,7 @@ main {
 /* Product Image */
 .product-card img {
     width: 100%;
-    height: 100%; /* Make image occupy full top space */
+    height: 50%; /* Make image occupy full top space */
     object-fit: cover;
 }
 
