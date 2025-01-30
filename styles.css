@@ -10,7 +10,7 @@ body {
 header {
     background-color: #333;
     color: white;
-    padding: 20px 0; /* Increased padding for better spacing */
+    padding: 15px 0; /* Adjust padding for a better layout */
     text-align: center;
     position: fixed;
     top: 0;
@@ -24,10 +24,10 @@ header .logo h1 {
     font-size: 2rem;
     text-transform: uppercase;
     font-weight: bold;
-    margin: 0; /* Ensure no margin above the logo */
+    margin: 0;
     position: relative;
     left: 50%;
-    transform: translateX(-50%); /* Center the logo */
+    transform: translateX(-50%);
     transition: left 0.3s ease-in-out;
 }
 
@@ -36,10 +36,11 @@ header nav ul {
     list-style-type: none;
     padding: 0;
     margin: 10px 0;
+    text-align: center; /* Align nav items horizontally */
 }
 
 header nav ul li {
-    display: inline;
+    display: inline-block;
     margin-right: 20px;
 }
 
@@ -48,16 +49,17 @@ header nav ul li a {
     text-decoration: none;
     font-size: 1.2rem;
     transition: text-decoration 0.3s ease;
+    padding: 5px 10px; /* Space around nav items */
 }
 
 header nav ul li a:hover {
     text-decoration: underline;
-    color: #f8f8f8;
+    color: #f8f8f8; /* Lighter color on hover */
 }
 
 /* Main Content Styling */
 main {
-    margin-top: 100px; /* To account for fixed header */
+    margin-top: 120px; /* Increased to account for header height */
     padding: 20px;
 }
 
@@ -77,4 +79,145 @@ main {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-between;
+}
+
+/* Product Card Styling */
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 32%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Product Image */
+.product-card img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Product Info */
+.product-info {
+    background-color: #f8f8f8;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    border-top: 2px solid #ddd;
+}
+
+.product-info h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.product-info p {
+    font-size: 1.2rem;
+    color: #888;
+    margin: 10px 0;
+}
+
+/* Add to Cart Button */
+.product-info button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Add to Cart Button Hover Effect */
+.product-info button:hover {
+    background-color: #555;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+/* Responsive Layout for Small Screens */
+@media (max-width: 768px) {
+    .product-card {
+        width: 48%; /* 2 per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        width: 100%; /* 1 per row */
+    }
+    .product-card img {
+        width: 80%;
+        height: auto;
+    }
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-links li {
+    display: inline-block;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #f8f8f8;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 15px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+    }
+
+    .footer-links li {
+        margin-bottom: 10px;
+    }
 }
