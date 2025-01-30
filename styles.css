@@ -123,7 +123,6 @@ main {
     margin: 10px 0;
 }
 
-/* Add to Cart Button */
 .product-info button {
     padding: 10px 20px;
     background-color: #333;
@@ -131,15 +130,11 @@ main {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease; /* Smooth transition for all properties */
+    transition: background-color 0.3s ease;
 }
 
-/* Add to Cart Button Hover Effect */
 .product-info button:hover {
-    background-color: #555; /* Slightly lighter background color */
-    transform: scale(1.1); /* Scale up the button */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for pop effect */
-    color: #fff; /* Keep the text color white */
+    background-color: #555;
 }
 
 /* Responsive Layout - For Smaller Screens */
