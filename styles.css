@@ -43,6 +43,12 @@ header nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
+    transition: text-decoration 0.3s ease; /* Smooth underline transition */
+}
+
+header nav ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #f8f8f8; /* Slightly lighter color on hover (optional) */
 }
 
 /* Main Content Styling */
