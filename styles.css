@@ -6,28 +6,32 @@ body {
     padding: 0;
 }
 
+/* Header Section */
 header {
     background-color: #333;
     color: white;
-    padding: 10px 0;
+    padding: 20px 0; /* Increased padding for better spacing */
     text-align: center;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     transition: top 0.3s ease-in-out;
+    height: 80px;  /* Ensure header has sufficient height */
 }
 
 header .logo h1 {
     font-size: 2rem;
     text-transform: uppercase;
     font-weight: bold;
+    margin: 0; /* Ensure no margin above the logo */
     position: relative;
     left: 50%;
-    transform: translateX(50%);
+    transform: translateX(-50%); /* Center the logo */
     transition: left 0.3s ease-in-out;
 }
 
+/* Navigation Menu */
 header nav ul {
     list-style-type: none;
     padding: 0;
@@ -43,12 +47,12 @@ header nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
-    transition: text-decoration 0.3s ease; /* Smooth underline transition */
+    transition: text-decoration 0.3s ease;
 }
 
 header nav ul li a:hover {
-    text-decoration: underline; /* Underline on hover */
-    color: #f8f8f8; /* Slightly lighter color on hover (optional) */
+    text-decoration: underline;
+    color: #f8f8f8;
 }
 
 /* Main Content Styling */
@@ -74,150 +78,3 @@ main {
     gap: 20px;
     justify-content: space-between;
 }
-
-/* Product Card Styling */
-.product-card {
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 32%; /* Adjust width to fit three products per row */
-    height: 100%; /* Full height of the container */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-
-.product-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Updated Product Image (400x400) */
-.product-card img {
-    width: 400px;   /* Set width to 400px (half of 800px) */
-    height: 400px;  /* Set height to 400px (half of 800px) */
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Product Info Styling */
-.product-info {
-    background-color: #f8f8f8;
-    padding: 15px;
-    text-align: center;
-    width: 100%;
-    border-top: 2px solid #ddd;
-}
-
-.product-info h3 {
-    font-size: 1.5rem;
-    margin: 10px 0;
-}
-
-.product-info p {
-    font-size: 1.2rem;
-    color: #888;
-    margin: 10px 0;
-}
-
-/* Add to Cart Button */
-.product-info button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease; /* Smooth transition for all properties */
-}
-
-/* Add to Cart Button Hover Effect */
-.product-info button:hover {
-    background-color: #555; /* Slightly lighter background color */
-    transform: scale(1.1); /* Scale up the button */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for pop effect */
-    color: #fff; /* Keep the text color white */
-}
-
-/* Responsive Layout - For Smaller Screens */
-@media (max-width: 768px) {
-    .product-card {
-        width: 48%; /* Adjust product width for medium screens (2 per row) */
-    }
-}
-
-@media (max-width: 480px) {
-    .product-card {
-        width: 100%; /* Adjust product width for small screens (1 per row) */
-    }
-    
-    .product-card img {
-        width: 80%;  /* Scale down image on smaller screens */
-        height: auto; /* Maintain aspect ratio */
-    }
-}
-/* Footer Styling */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Footer Links Section */
-.footer-content {
-    margin-bottom: 20px;
-}
-
-.footer-links {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.footer-links li {
-    display: inline-block;
-}
-
-.footer-link {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
-
-.footer-link:hover {
-    color: #f8f8f8; /* Light color on hover */
-    text-decoration: underline; /* Underline on hover */
-}
-
-/* Footer Bottom (Copyright) */
-.footer-bottom {
-    border-top: 1px solid #444;
-    padding-top: 15px;
-    font-size: 0.9rem;
-    color: #ccc;
-}
-
-/* Responsive Footer */
-@media (max-width: 768px) {
-    .footer-links {
-        flex-direction: column;
-    }
-
-    .footer-links li {
-        margin-bottom: 10px;
-    }
-}
-
-
-
