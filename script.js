@@ -1,57 +1,52 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const cart = [];
+let cart = []; // Store cart items
+const cartContainer = document.querySelector('.cart-container');
+const totalPriceElement = document.getElementById('total-price');
+const checkoutButton = document.getElementById('checkout-btn');
 
-    // Sample cart item structure
-    const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
-    const cartContainer = document.querySelector(".cart-container");
+// Example Product
+const exampleProduct = {
+    id: 1,
+    name: "Gold Necklace",
+    price: 50,
+    image: "path_to_image.jpg"
+};
 
-    // Function to update the cart UI
-    function updateCart() {
-        cartContainer.innerHTML = ""; // Clear cart before updating
-        cart.forEach((item, index) => {
-            const cartItem = document.createElement("div");
-            cartItem.classList.add("cart-item");
-            cartItem.innerHTML = `
-                <img src="${item.image}" alt="Product Image" class="cart-item-img">
-                <div class="cart-item-info">
-                    <p>${item.name}</p>
-                    <p>Price: $${item.price}</p>
-                </div>
-                <button class="remove-item-btn" data-index="${index}">Remove</button>
-            `;
-            cartContainer.appendChild(cartItem);
-        });
+// Function to add item to the cart
+function addItemToCart(product) {
+    cart.push(product);
+    updateCartUI();
+}
 
-        // Add event listener to remove buttons
-        const removeButtons = cartContainer.querySelectorAll(".remove-item-btn");
-        removeButtons.forEach(button => {
-            button.addEventListener("click", removeFromCart);
-        });
-    }
+// Function to remove item from the cart
+function removeItemFromCart(productId) {
+    cart = cart.filter(item => item.id !== productId);
+    updateCartUI();
+}
 
-    // Function to add item to the cart
-    addToCartButtons.forEach(button => {
-        button.addEventListener("click", function(event) {
-            const productCard = event.target.closest(".product-card");
-            const productName = productCard.querySelector("h3").textContent;
-            const productPrice = productCard.querySelector("p").textContent.replace('Price: $', '');
-            const productImage = productCard.querySelector("img").src;
+// Update the cart UI with cart items
+function updateCartUI() {
+    cartContainer.innerHTML = '';
+    let totalPrice = 0;
 
-            const product = {
-                name: productName,
-                price: parseFloat(productPrice),
-                image: productImage
-            };
+    cart.forEach(item => {
+        const cartItemElement = document.createElement('div');
+        cartItemElement.classList.add('cart-item');
 
-            cart.push(product);
-            updateCart();
-        });
+        cartItemElement.innerHTML = `
+            <img src="${item.image}" alt="Product Image" class="cart-item-img">
+            <div class="cart-item-info">
+                <p>${item.name}</p>
+                <p>Price: $${item.price}</p>
+            </div>
+            <button class="remove-item-btn" onclick="removeItemFromCart(${item.id})">Remove</button>
+        `;
+
+        cartContainer.appendChild(cartItemElement);
+        totalPrice += item.price;
     });
 
-    // Function to remove item from the cart
-    function removeFromCart(event) {
-        const index = event.target.dataset.index;
-        cart.splice(index, 1); // Remove item from cart array
-        updateCart(); // Update the cart display
-    }
-});
+    totalPriceElement.textContent = totalPrice.toFixed(2);
+}
+
+// Simulate adding a product
+addItemToCart(exampleProduct);
